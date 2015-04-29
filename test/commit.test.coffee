@@ -12,11 +12,11 @@ describe "Commit", ->
       repo.commits "master", (err, commits) ->
         tree = commits[0].tree()
         done err
-    
+
     it "passes a tree", ->
       tree.should.be.an.instanceof Tree
-  
-  
+
+
   describe "#parents", ->
     repo    = fixtures.branched
     parents = null
@@ -26,10 +26,10 @@ describe "Commit", ->
         parents = commits[0].parents()
         parent  = commits[1]
         done err
-    
+
     it "is an Array of Commits", ->
       parents.should.be.an.instanceof Array
       parents[0].should.be.an.instanceof Commit
-    
+
     it "has the parent commit", ->
       parents[0].id.should.eql parent.id

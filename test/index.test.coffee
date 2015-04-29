@@ -18,7 +18,7 @@ describe "git", ->
       git.init newRepositoryDir, (err, _repo) ->
         repo = _repo
         done err
-    it "inits a Repo", ->      
+    it "inits a Repo", ->
       repo.should.be.an.instanceof Repo
       bare = repo.bare || false
       bare.should.be.false
